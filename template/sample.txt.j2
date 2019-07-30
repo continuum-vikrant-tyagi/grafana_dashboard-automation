@@ -33,7 +33,7 @@ dashboard = Dashboard(
 			   ],
 			  yAxes=single_y_axis(format=BYTES_FORMAT),
               alert=Alert(
-                    name="Memory Usage Increase",
+                    name="memory increase {{namespace}}",
                     message="Memory increase",
                     alertConditions=[
                         AlertCondition(
