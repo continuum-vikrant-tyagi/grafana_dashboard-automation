@@ -5,8 +5,8 @@ title = os.environ['title']
 namespace = os.environ['namespace']
 print(title)
 print(namespace)
-title = raw_input("Enter title: ")
-namespace = raw_input("Enter namespace: ")
+#title = raw_input("Enter title: ")
+#namespace = raw_input("Enter namespace: ")
 
 file_loader = FileSystemLoader('template')
 env = Environment(loader=file_loader)
