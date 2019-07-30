@@ -7,5 +7,9 @@
 
 ### Prior requirement
 - create a source with name called "promethues"
-- import json file.
+- import grafana-template-pod-metrics.json file.
+
+
+### generating grafana dashboard with grafanalib + jinja2
+- underdevelopment
 
