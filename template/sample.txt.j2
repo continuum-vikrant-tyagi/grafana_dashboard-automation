@@ -36,18 +36,18 @@ dashboard = Dashboard(
                     name="Memory Usage Increase",
                     message="Memory increase",
                     alertConditions=[
-                    AlertCondition(
-                        Target(
-                        expr='sum (container_memory_working_set_bytes{namespace="{{namespace}}"}) by (pod_name,namespace)',
-                        legendFormat={{'"{{pod_name}}"'}},
-                        refId='A',
-                        ),
-                        timeRange=TimeRange("5m", "now"),
-                        evaluator=GreaterThan(42758621),
-                        operator=OP_AND,
-                        reducerType=RTYPE_SUM,
+                        AlertCondition(
+                            Target(
+                            expr='sum (container_memory_working_set_bytes{namespace="{{namespace}}"}) by (pod_name,namespace)',
+                            legendFormat={{'"{{pod_name}}"'}},
+                            refId='A',
+                            ),
+                            timeRange=TimeRange("5m", "now"),
+                            evaluator=GreaterThan(42758621),
+                            operator=OP_AND,
+                            reducerType=RTYPE_SUM,
 
-                    ),  
+                        ),  
                     ],
                 )
 		   ),
