@@ -59,7 +59,7 @@ dashboard = Dashboard(
 			 dataSource="prometheus",
 			 targets=[
 				 Target(
-				     expr='sum(rate (container_cpu_usage_seconds_total{namespace="platform-openapi-service"}[5m])) by (pod_name)',
+				     expr='sum(rate (container_cpu_usage_seconds_total{namespace="{{namespace}}"}[5m])) by (pod_name)',
 					 legendFormat={{'"{{pod_name}}"'}}
 				 ),
 			 ],
