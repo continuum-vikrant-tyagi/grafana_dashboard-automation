@@ -17,7 +17,7 @@ env = Environment(loader=file_loader)
 template = env.get_template('main.txt.j2')
 
 
-output = template.render(title=title, namespace=namespace, alert=alert)
+output = template.render(title=title, namespace=namespace, alert=alert, consumergroup=consumergroup)
 with open(title, 'w') as f:
 	f.write(output)
 #print(output)

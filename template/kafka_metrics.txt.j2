@@ -1,7 +1,7 @@
 Row(panels=[Graph(
                 title="CG Lag",
                 dataSource="prometheus",
-                target=[
+                targets=[
                     Target(
                         expr='sum(kafka_consumergroup_lag{consumergroup="{{consumergroup}}"}) by (topic)',
                         interval='10s',
