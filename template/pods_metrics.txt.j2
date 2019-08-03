@@ -1,0 +1,63 @@
+Row(panels=[
+            Graph(
+                title="I/O",
+                dataSource="prometheus",
+                targets=[
+                    Target(
+                        expr='sum (rate (container_network_receive_bytes_total{namespace="{{ namespace }}"}[5m])) by (pod_name,namespace)',
+                        interval="10s",
+                        legendFormat={{'"{{pod_name}}"'}}
+                    ),
+                ],
+                yAxes=[
+                    YAxis(format="Bps"),
+                    YAxis(format="short"),
+                ],
+            ),
+            
+		    Graph(
+		       title="Memory Usage",
+			   dataSource="prometheus",
+			   targets=[
+			       Target(
+				       expr='sum (container_memory_working_set_bytes{namespace="{{namespace}}"}) by (pod_name,namespace)',
+				       legendFormat={{'"{{pod_name}}"'}},
+                       refId='A',
+				   
+				   ),
+			   
+			   ],
+			  yAxes=single_y_axis(format=BYTES_FORMAT),
+              {% if alert == 'yes' %}
+                    alert=Alert(
+                                    name="memory increase {{namespace}}",
+                                    message="Memory increase",
+                                    alertConditions=[
+                                        AlertCondition(
+                                            Target(
+                                            expr='sum (container_memory_working_set_bytes{namespace="{{namespace}}"}) by (pod_name,namespace)',
+                                            legendFormat={{'"{{pod_name}}"'}},
+                                            refId='A',
+                                            ),
+                                            timeRange=TimeRange("5m", "now"),
+                                            evaluator=GreaterThan(42758621),
+                                            operator=OP_AND,
+                                            reducerType=RTYPE_SUM,
+
+                                        ),  
+                                    ],
+                                )
+            {% endif %}
+		   ),
+          
+          Graph(
+		     title="CPU Usage",
+			 dataSource="prometheus",
+			 targets=[
+				 Target(
+				     expr='sum(rate (container_cpu_usage_seconds_total{namespace="{{namespace}}"}[5m])) by (pod_name)',
+					 legendFormat={{'"{{pod_name}}"'}}
+				 ),
+			 ],
+		  ),
+        ]),
