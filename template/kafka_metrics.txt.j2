@@ -1,11 +1,24 @@
 Row(panels=[Graph(
-                title="CG Lag",
+                title="Consumer Group Lag",
                 dataSource="prometheus",
                 targets=[
                     Target(
                         expr='sum(kafka_consumergroup_lag{consumergroup="{{consumergroup}}"}) by (topic)',
                         interval='10s',
                         legendFormat={{'"topic- {{topic}}"'}}
+                    ),
+                ],      
+            ),
+]),
+
+Row(panels=[Graph(
+                title="Topic Partition Current Offset",
+                dataSource="prometheus",
+                targets=[
+                    Target(
+                        expr='sum(rate(kafka_topic_partition_current_offset{topic="$topic"}[5m])) by (partition)',
+                        interval='10s',
+                        legendFormat={{'"partition - {{partition}}"'}}
                     ),
                 ],      
             ),
