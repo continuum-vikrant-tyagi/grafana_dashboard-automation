@@ -3,11 +3,13 @@ import os
 from jinja2 import Environment, FileSystemLoader
 title = os.environ['title']
 namespace = os.environ['namespace']
+consumergroup = os.environ['consumergroup']
 alert = os.environ['alert']
+
 print(title)
 print(namespace)
-#title = raw_input("Enter title: ")
-#namespace = raw_input("Enter namespace: ")
+print(consumergroup)
+
 
 file_loader = FileSystemLoader('template')
 env = Environment(loader=file_loader)
