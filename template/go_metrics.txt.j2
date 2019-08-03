@@ -1,0 +1,12 @@
+Row(panels=[
+           Graph(
+                title="go_goroutines",
+                dataSource="prometheus",
+                targets=[
+                    Target(
+                        expr='go_goroutines{kubernetes_namespace="{{namespace}}"}',
+                        interval='10s'
+                    ),
+                ],      
+            ),
+]),

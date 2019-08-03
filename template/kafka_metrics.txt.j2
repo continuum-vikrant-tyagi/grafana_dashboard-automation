@@ -1,4 +1,5 @@
-Row(panels=[Graph(
+Row(panels=[
+            Graph(
                 title="Consumer Group Lag",
                 dataSource="prometheus",
                 targets=[
@@ -9,9 +10,7 @@ Row(panels=[Graph(
                     ),
                 ],      
             ),
-]),
-
-Row(panels=[Graph(
+            Graph(
                 title="Topic Partition Current Offset",
                 dataSource="prometheus",
                 targets=[
@@ -22,4 +21,5 @@ Row(panels=[Graph(
                     ),
                 ],      
             ),
+
 ]),

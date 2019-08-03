@@ -5,6 +5,8 @@ dashboard = Dashboard(
         {% include 'pods_metrics.txt.j2' %}
 
         {% include 'kafka_metrics.txt.j2' %}
+
+        {% include 'go_metrics.txt.j2' %}
     ],
 
 ) .auto_panel_ids()
