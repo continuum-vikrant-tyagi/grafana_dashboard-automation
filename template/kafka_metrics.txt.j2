@@ -16,7 +16,7 @@ Row(panels=[Graph(
                 dataSource="prometheus",
                 targets=[
                     Target(
-                        expr='sum(rate(kafka_topic_partition_current_offset{topic="$topic"}[5m])) by (partition)',
+                        expr='sum(rate(kafka_topic_partition_current_offset{topic="{{topic}}"}[5m])) by (partition)',
                         interval='10s',
                         legendFormat={{'"partition - {{partition}}"'}}
                     ),
