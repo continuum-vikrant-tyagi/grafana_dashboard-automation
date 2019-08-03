@@ -5,7 +5,7 @@ Row(panels=[Graph(
                     Target(
                         expr='sum(kafka_consumergroup_lag{consumergroup="{{consumergroup}}"}) by (topic)',
                         interval='10s',
-                        legendFormat={{'"topic: - {{topic}}"'}}
+                        legendFormat={{'"{{topic}}"'}}
                     ),
                 ],      
 
