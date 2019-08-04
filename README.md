@@ -24,11 +24,11 @@
    - is main jinja template which include several other jinja templates(pods_metrics.txt.j2,kafka_metrics.txt.j2 and go_metrics.txt.j2).
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-## How to generate dashboard json file for grafana.
-  - visit [jenkin job](https://tooling.itsupport247.net/jenkins/blue/organizations/jenkins/grafana_dashboard_generator/activity) and click on Run button
-  
-  - then fill this input form 
+## How to use and generate grafana dashboard.
+  - create jenkin pipline job and clone this repo and pass Jenkinfile
+  - click on blue ocean button, then click on Run button. 
+  - now fill this input form. 
    
    ![alt](image/grafana_automation_input.PNG)
 
-  - then visit Artifact and dowload generated .json file and import on Grafana.
+  - then visit Artifact and download generated .json file and import on Grafana.
