@@ -29,6 +29,6 @@ template = env.get_template('main.txt.j2')
 
 
 output = template.render(title=title, namespace=namespace, consumergroup=consumergroup, topics=topics, memoryalert=memoryalert, cpualert=cpualert, cg_lagalert=cg_lagalert)
-# # with open(title, 'w') as f:
-# # 	f.write(output)
-print(output)
+with open(title, 'w') as f:
+	f.write(output)
+# print(output)
