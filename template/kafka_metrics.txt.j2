@@ -35,7 +35,7 @@ Row(panels=[
 
                {% endif %}      
             ),
-{% for topic in topics -%}
+{% for topic in topics %}
             Graph(
                 title="{{topic}} Partition Current Offset",
                 dataSource="prometheus",
