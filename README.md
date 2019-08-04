@@ -16,6 +16,15 @@
   - jinja2
   - python
 
+
+## How to generate dashboard json file for grafana.
+  - visit [jenkin job](https://tooling.itsupport247.net/jenkins/blue/organizations/jenkins/grafana_dashboard_generator/activity) and click on Run button
+  
+  - then fill this input form 
+   
+   ![alt](image/grafana_automation_input.PNG)
+
+
 ### grafana_template.py
    - is a python template, which is responsible for generating a final python file for grafanalib.
    - it will consume multiple jinja2 templates (inside template/*.j2).
