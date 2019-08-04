@@ -36,7 +36,7 @@ spec:
       string(name: 'namespace', defaultValue: 'service namespace name', description: 'Write service namespace')
       string(name: 'consumergroup', defaultValue: 'cg', description: 'Write consumergroup name')
       string(name: 'topics', defaultValue: 'topics', description: 'Write topics name with comma seprate')
-      choice(choices: ['no', 'yes'], description: 'Select yes cpu alert', name: 'cpualert')
+      choice(choices: ['no', 'yes'], description: 'Select yes for cpu alert', name: 'cpualert')
       choice(choices: ['no', 'yes'], description: 'Select yes for memory alert', name: 'memoryalert')
       choice(choices: ['no', 'yes'], description: 'Select yes for cg_lag alert', name: 'cg_lagalert')
   }
