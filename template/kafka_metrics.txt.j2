@@ -2,6 +2,7 @@ Row(panels=[
             Graph(
                 title="Consumer Group Lag",
                 dataSource="prometheus",
+                legend=Legend(alignAsTable=True, rightSide=True, current=True, avg=True),
                 targets=[
                     Target(
                         expr='sum(kafka_consumergroup_lag{consumergroup="{{consumergroup}}"}) by (topic)',
@@ -9,7 +10,7 @@ Row(panels=[
                         legendFormat={{'"topic- {{topic}}"'}}
                     ),
                 ],
-                yAxes=single_y_axis(format="none",min="null",max="null")
+                yAxes=single_y_axis(format="none")
 
                 {% if cg_lagalert == 'yes' %}
                     alert=Alert(
@@ -37,12 +38,14 @@ Row(panels=[
             Graph(
                 title="Topic Partition Current Offset",
                 dataSource="prometheus",
+                legend=Legend(alignAsTable=True, rightSide=True, current=True, avg=True),
                 targets=[
                     Target(
                         expr='sum(rate(kafka_topic_partition_current_offset{topic="{{topic}}"}[5m])) by (partition)',
                         interval='10s',
                         legendFormat={{'"partition - {{partition}}"'}}
                     ),
+                yAxes=single_y_axis(format="none")
                 ],      
             ),
 
