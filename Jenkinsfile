@@ -48,16 +48,16 @@ spec:
             }
         }
     }
-    stage('generate-dashboard') {
-        steps {
-            container('grafanalib') {
-             dir("$WORKSPACE") {
-                sh "generate-dashboard -o ${params.title}.json ${params.title}"
-                archiveArtifacts artifacts: "${params.title}.json, ${params.title}", fingerprint: true
-                // sleep 300
-             } 
-            }
-        }
-    }
+    // stage('generate-dashboard') {
+    //     steps {
+    //         container('grafanalib') {
+    //          dir("$WORKSPACE") {
+    //             sh "generate-dashboard -o ${params.title}.json ${params.title}"
+    //             archiveArtifacts artifacts: "${params.title}.json, ${params.title}", fingerprint: true
+    //             // sleep 300
+    //          } 
+    //         }
+    //     }
+    // }
   }
 }
