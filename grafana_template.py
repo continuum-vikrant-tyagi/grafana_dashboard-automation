@@ -9,13 +9,14 @@ memoryalert = os.environ['memoryalert']
 cpualert = os.environ['cpualert']
 cg_lagalert = os.environ['cg_lagalert']
 
-print(title)
-print(namespace)
-print(consumergroup)
-print(topics)
+# print(title)
+# print(namespace)
+# print(consumergroup)
+# print(topics)
 
-for i in topics:
-	print(i, end=' ')
+topic = topics.split(",")
+for i in topic:
+	print(i)
 
 
 # file_loader = FileSystemLoader('template')
