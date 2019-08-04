@@ -15,7 +15,7 @@ print(consumergroup)
 print(topics)
 
 for i in topics:
-	print(i)
+	print(i, end=' ')
 
 
 # file_loader = FileSystemLoader('template')
