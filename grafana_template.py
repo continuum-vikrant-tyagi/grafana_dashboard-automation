@@ -15,10 +15,10 @@ print(consumergroup)
 print(topics)
 
 
-# file_loader = FileSystemLoader('template')
-# env = Environment(loader=file_loader)
+file_loader = FileSystemLoader('template')
+env = Environment(loader=file_loader)
 
-# template = env.get_template('main.txt.j2')
+template = env.get_template('main.txt.j2')
 
 
 output = template.render(title=title, namespace=namespace, consumergroup=consumergroup, topics=topics, memoryalert=memoryalert, cpualert=cpualert, cg_lagalert=cg_lagalert)
