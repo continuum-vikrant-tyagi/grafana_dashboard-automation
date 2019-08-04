@@ -17,6 +17,9 @@ print(topics)
 
 file_loader = FileSystemLoader('template')
 env = Environment(loader=file_loader)
+env.trim_blocks = True
+env.lstrip_blocks = True
+env.rstrip_blocks = True
 
 template = env.get_template('main.txt.j2')
 
