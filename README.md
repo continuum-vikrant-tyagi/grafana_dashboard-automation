@@ -9,7 +9,7 @@
 - create a source with name called "promethues"
 - import grafana-template-pod-metrics.json file.
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------
 # grafana dashboard generator
 ## automation component
   - grafanalib
@@ -21,3 +21,4 @@
    - it will consume multiple jinja2 templates (inside template/*.j2).
 ### template/main.txt.j2
    - is main jinja template which include several other jinja templates(pods_metrics.txt.j2,kafka_metrics.txt.j2 and go_metrics.txt.j2).
+--------------------------------------------------------------------------------------------------------------------------------------------
