@@ -9,7 +9,7 @@ Row(panels=[
                         legendFormat={{'"topic- {{topic}}"'}}
                     ),
                 ],
-                yAxes=single_y_axis(min=NULL_AS_NULL)
+                yAxes=single_y_axis(format=none,min=' ',max=' ')
 
                 {% if cg_lagalert == 'yes' %}
                     alert=Alert(
