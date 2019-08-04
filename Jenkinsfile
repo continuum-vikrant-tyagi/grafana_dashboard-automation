@@ -41,14 +41,14 @@ spec:
       choice(choices: ['no', 'yes'], description: 'Select yes for cg_lag alert', name: 'cg_lagalert')
   }
   stages {
-    stage('checkout') {
-      steps {
-        container('grafanalib') {
-        //   sh "python --version"
-           checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '2b69eeb0-21a4-42bf-8bd8-9b68e5b87caf', url: 'https://github.com/continuum-vikrant-tyagi/grafana_dashboard-automation.git']]])
-        }
-      }
-    }
+    // stage('checkout') {
+    //   steps {
+    //     container('grafanalib') {
+    //     //   sh "python --version"
+    //        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '2b69eeb0-21a4-42bf-8bd8-9b68e5b87caf', url: 'https://github.com/continuum-vikrant-tyagi/grafana_dashboard-automation.git']]])
+    //     }
+    //   }
+    // }
     stage('build-python') {
         steps {
             container('grafanalib') {
