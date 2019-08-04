@@ -8,7 +8,30 @@ Row(panels=[
                         interval='10s',
                         legendFormat={{'"topic- {{topic}}"'}}
                     ),
-                ],      
+                ],
+
+                {% if cg_lagalert == 'yes' %}
+                    alert=Alert(
+                                    name="consumergroup Lag {{consumergroup}}",
+                                    message="consumergroup lag",
+                                    alertConditions=[
+                                        AlertCondition(
+                                            Target(
+                                            expr='sum(kafka_consumergroup_lag{consumergroup="{{consumergroup}}"}) by (topic)',
+                                            legendFormat={{'"topic- {{topic}}"'}},
+                                            refId='A',
+                                            ),
+                                            timeRange=TimeRange("5m", "now"),
+                                            evaluator=GreaterThan(42758621),
+                                            operator=OP_AND,
+                                            reducerType=RTYPE_SUM,
+
+                                        ),  
+                                    ],
+                                )
+
+
+               {% endif %}      
             ),
             Graph(
                 title="Topic Partition Current Offset",
