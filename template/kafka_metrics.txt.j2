@@ -35,8 +35,9 @@ Row(panels=[
 
                {% endif %}      
             ),
+{% for topic in topics -%}
             Graph(
-                title="Topic Partition Current Offset",
+                title="{{topic}} Partition Current Offset",
                 dataSource="prometheus",
                 legend=Legend(alignAsTable=True, rightSide=True, current=True, avg=True),
                 targets=[
@@ -48,5 +49,6 @@ Row(panels=[
                 ],
                 yAxes=single_y_axis(format="none"),      
             ),
+{% endfor %}
 
 ]),
