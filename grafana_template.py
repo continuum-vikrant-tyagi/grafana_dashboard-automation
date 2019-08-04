@@ -4,7 +4,7 @@ from jinja2 import Environment, FileSystemLoader
 title = os.environ['title']
 namespace = os.environ['namespace']
 consumergroup = os.environ['consumergroup']
-topics = os.environ['topics']
+topics = os.environ['topics'].split(",")
 memoryalert = os.environ['memoryalert']
 cpualert = os.environ['cpualert']
 cg_lagalert = os.environ['cg_lagalert']
@@ -14,8 +14,8 @@ cg_lagalert = os.environ['cg_lagalert']
 # print(consumergroup)
 # print(topics)
 
-topic = topics.split(",")
-for i in topic:
+# topic = topics.split(",")
+for i in topics:
 	print(i)
 
 
