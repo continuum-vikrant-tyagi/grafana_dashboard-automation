@@ -55,7 +55,7 @@ Row(panels=[
 			 dataSource="prometheus",
 			 targets=[
 				 Target(
-				     expr='(sum(rate (container_cpu_usage_seconds_total{namespace="{{namespace}}"}[5m])) by (pod_name)' / sum(container_spec_cpu_quota{namespace="{{namespace}}"}) by (pod_name)) * 100,
+				     expr='((sum(rate (container_cpu_usage_seconds_total{namespace="platform-user-account-service"}[5m])) by (pod_name) / sum(container_spec_cpu_quota{namespace="platform-user-account-service"}) by (pod_name)) * 100)',
 					 legendFormat={{'"{{pod_name}}"'}}
 				 ),
 			 ],
@@ -68,7 +68,7 @@ Row(panels=[
                                     alertConditions=[
                                         AlertCondition(
                                             Target(
-                                            expr='(sum(rate (container_cpu_usage_seconds_total{namespace="{{namespace}}"}[5m])) by (pod_name)' / sum(container_spec_cpu_quota{namespace="{{namespace}}"}) by (pod_name)) * 100',
+                                            expr='((sum(rate (container_cpu_usage_seconds_total{namespace="platform-user-account-service"}[5m])) by (pod_name) / sum(container_spec_cpu_quota{namespace="platform-user-account-service"}) by (pod_name)) * 100)',
                                             legendFormat={{'"{{pod_name}}"'}},
                                             refId='A',
                                             ),
