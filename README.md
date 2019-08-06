@@ -1,4 +1,4 @@
-# grafana dashboard tempalate
+## grafana dashboard tempalate
 
 ## grafana-template-pod-metrics.json
 - a generic template for all the infra and go process metrics of pods.
